@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+	int q,alpha,xa,xb,ya,yb,k1,k2;
+	printf("enter any number:");
+	scanf("%d",&q);
+	printf("enter alpha value:");
+	scanf("%d",&alpha);
+	printf("enter private key of A user:");
+	scanf("%d",&xa);
+	printf("enter private key of B user:");
+    scanf("%d",&xb);
+	ya=alpha^xa%q;
+	printf("\npublic key of A user is:%d",ya);
+	yb=alpha^xb%q;
+	printf("\npublic key of B user is:%d",yb);
+	k1=yb^xa%q;
+	k2=ya^xb%q;
+	printf("\nkey for the user A is:%d",k1);
+	printf("\nkey for the user B is:%d",k2);
+}
